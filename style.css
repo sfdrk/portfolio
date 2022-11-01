@@ -1,0 +1,240 @@
+
+html{
+    overflow-x: hidden !important;
+}
+
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;  
+    font-family:'Newake Demo';
+    min-height:100vh;
+    height:100vh;overflow:hidden;
+    background-color:#1d1d1d;
+    background-image: radial-gradient(circle farthest-corner at 50% 50%,#6b5980,#1d1d1d);
+}
+
+p{
+    margin:0;
+}
+.container{
+    max-width: 1600px;
+    margin-inline:auto;
+    padding:0 60px;
+
+}
+
+.name-block{
+    opacity:0;
+    transition:.9s ease-in;
+}
+
+.first-para{
+    position: relative;
+    transition: 0.9s all;
+    transform: translate(-100%);
+}
+
+.second-para{
+position: relative;
+transition: 0.9s all;
+transform: translate(100%);
+}
+
+
+.second-block{
+    display:flex;
+    justify-content: center;
+}
+
+.soon{
+    position: relative;
+}
+
+.soon-block p::before{
+    content: "";
+    position: absolute;
+    width:100%;
+    height:5px;
+    top:20px;
+    background-color: red;
+
+}
+
+.cmp-block img{
+    max-width: 190px;
+    width:100%;
+}
+
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    padding-bottom: 0;
+    background-image: url("./images/bg.gif");
+    background-position: 0 0;
+    background-size: auto;
+    opacity: .03;
+}
+
+.main-block{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+.title-block{
+    padding:0 60px;
+}
+
+.title{
+    font-size:clamp(20px, 16px + 15vw ,250px);
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color:white;
+    margin-top:0;
+    margin-bottom: 0;
+    display:flex;
+    justify-content:center;
+}
+
+.by{
+    font-family: 'Scriptina';
+    color:#ffff56;
+    font-size:clamp(26px, 16px + 15vw ,50px);
+    text-align: center;
+}
+
+.name{
+    font-size:clamp(26px, 16px + 15vw ,80px);
+    text-align: center;
+    color:#ffff56;
+    padding-top:1rem;
+}
+
+.soon-block{
+    display:flex;
+    justify-content:center;
+    font-weight: 100;
+}
+
+
+.coming-soon-block{
+    display:flex;
+    position:fixed;
+    bottom: 0;
+    width:100%;
+    padding:1rem 0;
+    background-color: #cfbdea;
+    background-image: linear-gradient(180deg,#fef2b6,#cfbdea);
+    width:100%;
+}
+.soon-animate{
+    display:flex;
+    animation: moving 20s infinite linear running;
+    transition: all 20s linear;
+    white-space: nowrap;
+    width:250%;
+
+}
+.soon{
+    font-size:clamp(26px, 16px + 9vw ,40px);
+    position: relative;
+    z-index: -1;
+    padding:0 200px;
+
+}
+
+.coming-soon-mobile{
+    display:flex;
+    position:fixed;
+    bottom: 0;
+    width:100%;
+    padding:1rem 0;
+    background-color: #cfbdea;
+    background-image: linear-gradient(180deg,#fef2b6,#cfbdea);
+    width:100%;
+    display:none;
+}
+
+@media (max-width:600px){
+    .title-block{
+        padding:0 30px;
+    }
+    .title{
+        font-size:64px;
+    }
+    .name{
+        font-size:30px;
+    }
+    .soon{
+        padding:0 50px;
+    }
+    .by{
+        font-size:30px;
+    }
+    .name{
+        padding-top:5px;
+    }
+    .soon{
+        font-size:30px;
+    }
+    .coming-soon-block{
+        padding:8px 0 ;
+        display:none;
+    }
+    .coming-soon-mobile{
+        display:block;
+        padding:8px 0;
+    }
+    .soon{
+        text-align:center;
+    }
+    .first-para{
+        position: relative;
+        transition: 0.9s all;
+        transform: translate(0);
+    }
+    
+    .second-para{
+    position: relative;
+    transition: 0.9s all;
+    transform: translate(0);
+    }
+}
+
+@media (max-width:320px){
+    .title{
+        font-size:50px;
+    }
+}
+
+@font-face {
+    font-family: 'Newake Demo';
+    src: url('./fonts/NewakeDemo.woff2') format('woff2'),
+        url('./fonts/NewakeDemo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Scriptina';
+    src: url('./fonts/Scriptina.woff2') format('woff2'),
+        url('./fonts/Scriptina.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@keyframes moving {
+    100% {
+        transform: translate(-2400px);
+    }
+}
